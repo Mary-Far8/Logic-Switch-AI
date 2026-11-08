@@ -10,9 +10,9 @@ load_dotenv()
 
 def get_api_key():
     try:
-        return st.secrets["gemeni_API_KEY"]
+        return st.secrets["GEMINI_API_KEY"]
     except Exception:
-        return os.getenv("gemeni_API_KEY")
+        return os.getenv("GEMINI_API_KEY")
 
 
 client = genai.Client(api_key=get_api_key())

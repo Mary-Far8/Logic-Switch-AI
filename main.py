@@ -5,7 +5,7 @@ from google.genai import types
 
 load_dotenv()
 
-api_key = os.getenv("gemeni_API_key")
+api_key = os.getenv("GEMINI_APP_KEY")
 client = genai.Client(api_key=api_key)
 
 MODEL = "gemini-3.5-flash"
