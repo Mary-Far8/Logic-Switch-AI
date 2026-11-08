@@ -8,7 +8,14 @@ from google.genai import types
 
 load_dotenv()
 
-client = genai.Client(api_key=os.getenv("gemeni_API_KEY"))
+def get_api_key():
+    try:
+        return st.secrets["gemeni_API_KEY"]
+    except Exception:
+        return os.getenv("gemeni_API_KEY")
+
+
+client = genai.Client(api_key=get_api_key())
 
 MODEL = "gemini-3.5-flash"
 
